@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>tiles</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="test.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Truncate Text</title>
+<style>
+  .truncate {
+    width: 200px; /* Set your desired width */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis (...) for overflowed text */
+  }
+</style>
 </head>
 <body>
-
-    <div class="grid-container">
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <!-- Add more grid items as needed -->
-    </div>
-
-    
+<!-- Example text -->
+<div class="truncate">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
 </body>
 </html>

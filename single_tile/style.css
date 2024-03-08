@@ -3,6 +3,8 @@ body {
 }
 
 .tile {
+    position: relative;
+    
     background-color: #fff; /* Set background color */
     border: 1px solid #ddd; /* Add border for visual separation */
     border-radius: 10px; /* Add border radius for rounded corners */
@@ -39,12 +41,20 @@ body {
 }
 
 .tile .content {
+    position: absolute; /* Position content absolutely */
+    bottom: 0; /* Align content to the bottom */
+
     background-color: aquamarine;
     padding: 10px; /* Add padding to content */
     transition: font-size 0.3s ease; /* Add transition for smooth font-size change */
     line-height: 1.5; /* Set line-height for smoother vertical transition */
     display: flex;
     align-items: flex-end;
+
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .tile h2 {
