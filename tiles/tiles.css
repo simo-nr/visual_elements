@@ -1,0 +1,39 @@
+body {
+    padding: 50px;
+    background: #333;
+  }
+  
+  .posts {
+    
+    display: flex;
+    flex-flow: row wrap;
+    
+    .post {
+      
+      background: white;
+      margin: 10px;
+      height: 100px;
+      width: calc( (100% / 3) - 20px );
+      padding: 10px;
+      
+    }
+    
+    .feature {
+      
+      width: calc( ( ( 100% / 3 ) * 2) - 20px );
+      
+    }
+    
+  }
+  
+  @media (max-width: 480px) {
+    
+    .posts {
+      
+      .post {
+        width: 100%;
+      }
+      
+    }
+    
+  }

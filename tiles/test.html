@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Tile Layout</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  :root {
+    --tile-margin: 50px;
+  }
+
+  .tile {
+    box-sizing: border-box;
+    border: 2px solid #333;
+    margin: var(--tile-margin);
+    background-color: #f0f0f0;
+    text-align: center;
+    line-height: 100px; /* Adjust as needed */
+    transition: all 0.3s ease;
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .tile {
+        width: calc(50% - 2 * var(--tile-margin));
+    }
+}
+
+  @media screen and (max-width: 320px) {
+      .tile {
+        width: calc(100% - 2 * var(--tile-margin)); 
+      }
+  }
+
+</style>
+</head>
+<body>
+<div class="container">
+  <!-- You can adjust the number of tiles as needed -->
+  <div class="tile">Tile 1</div>
+  <div class="tile">Tile 2</div>
+  <div class="tile">Tile 3</div>
+  <div class="tile">Tile 4</div>
+  <div class="tile">Tile 5</div>
+  <div class="tile">Tile 6</div>
+  <div class="tile">Tile 7</div>
+  <div class="tile">Tile 8</div>
+</div>
+<script>
+  function resizeTiles() {
+    const containerWidth = document.querySelector('.container').offsetWidth;
+    const tileMargin = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--tile-margin'));
+    const tileWidth = containerWidth <= 768 ? containerWidth / 2 - (tileMargin * 2) : containerWidth / 4 - (tileMargin * 2); // changed from 20 to 60 
+    const tiles = document.querySelectorAll('.tile');
+    tiles.forEach(tile => {
+      tile.style.width = tileWidth + 'px';
+      tile.style.height = tileWidth + 'px';
+    });
+  }
+  window.addEventListener('resize', resizeTiles);
+  resizeTiles(); // Initial call to resize tiles on page load
+</script>
+</body>
+</html>

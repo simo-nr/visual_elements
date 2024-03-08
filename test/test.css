@@ -1,0 +1,18 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust minmax value for tile size */
+    gap: 20px; /* Adjust gap between tiles */
+  }
+  
+  .grid-item {
+    background-color: #ccc; /* Adjust background color as needed */
+    padding: 20px; /* Adjust padding as needed */
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Adjust minmax value for smaller window sizes */
+    }
+  }
+  
